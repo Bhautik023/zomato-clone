@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { RootState } from "../../store/store";
 import "./RestaurantsDetails.css";
 import Header from "../../components/header/Header";
@@ -71,9 +71,9 @@ const RestaurantDetails = () => {
               ))}
             </div>
             <div>
-              <a
+              <Link
                 className={`btn btn-outline-secondary text-decoration-none`}
-                href={restaurant.location}
+                to={`https://www.google.com/maps/dir/?api=1&destination=${restaurant.location}`}
                 target="_blank"
                 aria-disabled="true"
               >
@@ -83,7 +83,7 @@ const RestaurantDetails = () => {
                   ></i>
                   <p className="mb-0">Direction</p>
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-md-6 d-flex justify-content-end">
