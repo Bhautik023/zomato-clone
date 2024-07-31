@@ -1,0 +1,230 @@
+[
+  {
+    "restaurants": [
+      {
+        "categories": ["gujrati", "punjabi", "south"],
+        "foodType": "Veg",
+        "id": 1,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaPI6NkGfWF2n2Zog2Q9c-6eWwsEgF3vhNWQ&s",
+        "image2": "https://lh3.googleusercontent.com/_vJ3J9RCbVkwN3O_pAMxm7BHA2M0P5BZL_z3ZjEJKM3MyZdoq6j5yOWxX1Ho7i7wnQCBhjIEdYg7Iq1ejs71pJCeD5m_ACQIJkxRbgg=w360-rw",
+        "image3": "https://media-cdn.tripadvisor.com/media/photo-s/19/3d/76/46/best-gujarati-thali-in.jpg",
+        "image4": "https://media-cdn.tripadvisor.com/media/photo-s/0f/f2/b5/31/iscon-thal.jpg",
+        "items": [
+          {
+            "name": "Roti",
+            "price": 10
+          },
+          {
+            "name": "Sabji",
+            "price": 50
+          }
+        ],
+        "location": "Ahmedabad",
+        "rating": 4,
+        "restaurantName": "Iscon Thal"
+      },
+      {
+        "categories": ["gujrati", "Chinise", "south"],
+        "foodType": "Veg",
+        "id": 2,
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/12/47/73/4e/exterior.jpg",
+        "image2": "https://media-cdn.tripadvisor.com/media/photo-s/18/47/dd/69/green-apple-restaurant.jpg",
+        "image3": "https://c8.alamy.com/comp/EEJ3DN/the-green-apple-restaurant-in-kuwait-city-EEJ3DN.jpg",
+        "image4": "https://media-cdn.tripadvisor.com/media/photo-s/18/47/dd/6a/images-3-largejpg.jpg",
+        "items": [
+          {
+            "name": "Fried Rice",
+            "price": 150
+          },
+          {
+            "name": "Noodles",
+            "price": 100
+          }
+        ],
+        "location": "Green Apple",
+        "rating": 3,
+        "restaurantName": "Green Apple"
+      },
+      {
+        "categories": ["gujrati"],
+        "foodType": "Veg",
+        "id": 3,
+        "image": "https://img.restaurantguru.com/w550/h367/r793-Rajwadi-Bhojanalaya-Gujarati-Thali-Punjabi-Thali-food.jpg",
+        "image2": "https://content.jdmagicbox.com/comp/gandhinagar-gujarat/r3/9999pxx79.xx79.181204155323.q7r3/catalogue/rajwadi-bhojnalay-gandhinagar-gandhinagar-gujarat-restaurants-bsfrkge44y.jpg",
+        "image3": "https://content.jdmagicbox.com/comp/ahmedabad/s9/079pxx79.xx79.190705134114.d9s9/catalogue/rajwadi-gujarati-thali-chandkheda-ahmedabad-restaurants-8a1zyrwpza.jpg",
+        "image4": "https://img.restaurantguru.com/c7cc-Restaurant-Rajwadi-Bhojanalaya-Gujarati-Thali-Punjabi-Thali-food.jpg",
+        "items": [
+          {
+            "name": "Roti",
+            "price": 10
+          },
+          {
+            "name": "Sabji",
+            "price": 50
+          }
+        ],
+        "location": "Rajwadi bhojnalay,Gandhinagar",
+        "rating": 2,
+        "restaurantName": "Rajwadi bhojnalay"
+      },
+      {
+        "categories": ["FastFood"],
+        "foodType": "No-Veg",
+        "id": 4,
+        "image": "https://content.jdmagicbox.com/comp/ahmedabad/z7/079pxx79.xx79.220603221418.z5z7/catalogue/mccafe-by-mcdonalds-sola-road-ahmedabad-desserts-fcu9wqr72e.jpg",
+        "image2": "https://content3.jdmagicbox.com/comp/def_content_category/mcdonalds/image-1-mcdonalds-1002-5yt6c.jpg",
+        "image3": "https://img.restaurantguru.com/r392-McDonalds-interior-2021-09-732.jpg",
+        "image4": "https://www.nogarlicnoonions.com/images/article_images/2016-04/mcdonalds-seoul-korea152016-04-25-03-53-00.jpg",
+        "items": [
+          {
+            "name": "Cheeseburger",
+            "price": 100
+          },
+          {
+            "name": "Fries",
+            "price": 50
+          },
+          {
+            "name": "McNuggets",
+            "price": 120
+          }
+        ],
+        "location": "Ahmedabad",
+        "rating": 5,
+        "restaurantName": "Mcdonald's"
+      },
+      {
+        "categories": ["gujrati", "punjabi", "south"],
+        "foodType": "No-Veg",
+        "id": 5,
+        "image": "https://content.jdmagicbox.com/comp/ahmedabad/l8/079pxx79.xx79.150706102455.g3l8/catalogue/honest-restaurant-sardar-nagar-ahmedabad-punjabi-restaurants-12hmgdd.jpg",
+        "image2": "https://media-cdn.tripadvisor.com/media/photo-s/16/f6/63/f4/img-20190328-075657-largejpg.jpg",
+        "image3": "https://media-cdn.tripadvisor.com/media/photo-s/07/86/d0/bb/honest-restaurant.jpg",
+        "image4": "https://content.jdmagicbox.com/comp/gandhinagar-gujarat/j1/9999pxx79.xx79.190719213229.a1j1/catalogue/honest-restaurant-gandhinagar-gandhinagar-gujarat-restaurants-lcgj9okgi8.jpg",
+        "items": [
+          {
+            "name": "Punjabi Thali",
+            "price": 250
+          },
+          {
+            "name": "Butter Chicken",
+            "price": 200
+          }
+        ],
+        "location": "Ahmedabad",
+        "rating": 1,
+        "restaurantName": "Honest"
+      },
+      {
+        "categories": ["Japanese"],
+        "foodType": "No-Veg",
+        "id": 6,
+        "image": "https://static1.squarespace.com/static/55839223e4b0c020dcf488a5/t/56510717e4b0a95fdb7a4adf/1704965015847/",
+        "image2": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/d6/6f/ed/sushi-delight.jpg?w=1200&h=-1&s=1",
+        "image3": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/31/07/bb/tani.jpg?w=700&h=-1&s=1",
+        "image4": "https://media-cdn.tripadvisor.com/media/photo-s/1b/c6/81/ab/delight-sushi-bar.jpg",
+        "items": [
+          {
+            "name": "Sushi Roll",
+            "price": 150
+          },
+          {
+            "name": "Sashimi",
+            "price": 200
+          }
+        ],
+        "location": "Tokyo",
+        "rating": 4,
+        "restaurantName": "Sushi Delight"
+      },
+      {
+        "categories": ["Indian", "Chinese"],
+        "foodType": "Veg",
+        "id": 7,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrsAVBLua8bCWYbsoq1cKLnKCh1kcfCgZYMw&s",
+        "image2": "https://content3.jdmagicbox.com/comp/palakkad/y1/9999px491.x491.170928202038.l4y1/catalogue/royal-taste-restaurant-thiruvazhiyode-palakkad-restaurants-ozc39iyzkd.jpg",
+        "image3": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/be/8d/65/interior.jpg?w=1200&h=-1&s=1",
+        "image4": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT99a94xl086Mlw716S9r6Hj2zLMfzUOFnKpQ&s",
+        "items": [
+          {
+            "name": "Paneer Tikka",
+            "price": 120
+          },
+          {
+            "name": "Spring Rolls",
+            "price": 100
+          }
+        ],
+        "location": "Mumbai",
+        "rating": 4,
+        "restaurantName": "The Royal Taste"
+      },
+      {
+        "categories": ["Italian"],
+        "foodType": "Veg",
+        "id": 8,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRMIAJEAFcCWi74V0CBFPx5BUFGRTkKLbZcQ&s",
+        "image2": "https://media-cdn.tripadvisor.com/media/photo-s/1c/0e/98/5f/n-m-ngay-m-t-ti-n-du.jpg",
+        "image3": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/50/e2/b3/khong-gian-t-ng-tr-t.jpg?w=1100&h=-1&s=1",
+        "image4": "https://fastly.4sqi.net/img/general/600x600/739805_ZTRn5MsGjmYGTUh6ln_VD01rwydB7MAP8I6jkFrcLQ4.jpg",
+        "items": [
+          {
+            "name": "Spaghetti Carbonara",
+            "price": 180
+          },
+          {
+            "name": "Lasagna",
+            "price": 200
+          }
+        ],
+        "location": "Bangalore",
+        "rating": 5,
+        "restaurantName": "Pasta Paradise"
+      },
+      {
+        "categories": ["gujrati", "punjabi", "south"],
+        "foodType": "No-Veg",
+        "id": 9,
+        "image": "https://content.jdmagicbox.com/comp/ahmedabad/l8/079pxx79.xx79.150706102455.g3l8/catalogue/honest-restaurant-sardar-nagar-ahmedabad-punjabi-restaurants-12hmgdd.jpg",
+        "image2": "https://media-cdn.tripadvisor.com/media/photo-s/16/f6/63/f4/img-20190328-075657-largejpg.jpg",
+        "image3": "https://media-cdn.tripadvisor.com/media/photo-s/07/86/d0/bb/honest-restaurant.jpg",
+        "image4": "https://content.jdmagicbox.com/comp/gandhinagar-gujarat/j1/9999pxx79.xx79.190719213229.a1j1/catalogue/honest-restaurant-gandhinagar-gandhinagar-gujarat-restaurants-lcgj9okgi8.jpg",
+        "items": [
+          {
+            "name": "Gujarati Thali",
+            "price": 230
+          },
+          {
+            "name": "Dosa",
+            "price": 80
+          }
+        ],
+        "location": "Ahmedabad",
+        "rating": 2,
+        "restaurantName": "Honest"
+      },
+      {
+        "categories": ["Indian"],
+        "foodType": "No-Veg",
+        "id": 10,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjD_qhhbzJh1HDoi-H_cCRDCx85zgZ8DizqA&s",
+        "image2": "https://lh3.googleusercontent.com/gzvxlslBUeDnmkPZZgoY_f9GG3ecwkfXwjoleois1PAyCNExs4xhzvQ2iJwEMruX2rntvJPJy83ED5GfZNyYpHZZcts=w1200-rw",
+        "image3": "https://www.localbiznetwork.com/images/company_logo/111900.jpg",
+        "image4": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt3atk_hoMto5yKf_bLrPltCVeI_EM8DpBe4p7KB2yKPM4KHO0EMIAcwvIE1kBB5SDJq4&usqp=CAU",
+        "items": [
+          {
+            "name": "Tandoori Chicken",
+            "price": 250
+          },
+          {
+            "name": "Naan",
+            "price": 30
+          }
+        ],
+        "location": "Delhi",
+        "rating": 3,
+        "restaurantName": "Tandoori Magic"
+      }
+    ]
+  }
+]

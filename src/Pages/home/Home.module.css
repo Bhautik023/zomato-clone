@@ -1,0 +1,43 @@
+.homeContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.contentOverlay {
+  position: relative;
+  z-index: 1;
+  width: 70vw;
+  height: 47vh;
+  bottom: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  height: 40%;
+  width: 40%;
+  object-fit: contain;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-weight: 300;
+}

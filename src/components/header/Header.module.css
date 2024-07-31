@@ -1,0 +1,36 @@
+.headerContainer {
+  padding: 1rem 4rem;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  align-items: center;
+}
+
+.logoImg {
+  max-width: 14rem;
+  height: 1.8rem;
+  display: block;
+  cursor: pointer;
+}
+
+.searchInputContainer {
+  border-radius: 10px;
+  width: 65%;
+  box-shadow: 0 2px 4px 0 #d6d6d6;
+}
+
+.lists {
+  list-style: none;
+  display: flex;
+  gap: 1.3rem;
+  margin: 0px;
+}
+
+.buttonLogin, .buttonSignup {
+  background-color: white;
+  border: none;
+  color: #838383;
+}
