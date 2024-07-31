@@ -20,8 +20,12 @@ const Home = () => {
       />
       <div className={styles.contentOverlay}>
         <header>
-          <img src={title} alt="title" className={styles.title} />
-          <h3>Discover the best food & drinks in {fetchedLocation}</h3>
+          <div className="logo-cotainer">
+            <img src={title} alt="title" className={styles.title} />
+          </div>
+          <div className="tagline-container">
+            <h3>Discover the best food & drinks in {fetchedLocation}</h3>
+          </div>
         </header>
         <SearchInput />
       </div>
