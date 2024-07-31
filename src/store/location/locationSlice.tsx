@@ -1,5 +1,4 @@
-// features/location/locationSlice.ts
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface LocationState {
   city: string;
@@ -7,12 +6,12 @@ interface LocationState {
 }
 
 const initialState: LocationState = {
-  city: 'Fetch location',
+  city: "Fetch location",
   error: null,
 };
 
 const locationSlice = createSlice({
-  name: 'location',
+  name: "location",
   initialState,
   reducers: {
     fetchLocationRequest: (state) => {},

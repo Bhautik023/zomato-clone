@@ -6,7 +6,7 @@ import "./RestaurantsDetails.css";
 import Header from "../../components/header/Header";
 
 const RestaurantDetails = () => {
-  const { id } = useParams<{ id: any}>();
+  const { id } = useParams<{ id: any }>();
   const restaurant = useSelector(
     (state: RootState) => state.restaurants.restaurants[id]
   );
@@ -78,7 +78,9 @@ const RestaurantDetails = () => {
                 aria-disabled="true"
               >
                 <span className="d-flex align-items-center">
-                  <i className={`fa-solid fa-diamond-turn-right whiteIcon fs-12 me-1`}></i>
+                  <i
+                    className={`fa-solid fa-diamond-turn-right whiteIcon fs-12 me-1`}
+                  ></i>
                   <p className="mb-0">Direction</p>
                 </span>
               </a>

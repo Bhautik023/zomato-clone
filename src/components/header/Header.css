@@ -29,7 +29,8 @@
   margin: 0px;
 }
 
-.buttonLogin, .buttonSignup {
+.buttonLogin,
+.buttonSignup {
   background-color: white;
   border: none;
   color: #838383;

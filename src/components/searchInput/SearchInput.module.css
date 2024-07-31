@@ -2,7 +2,6 @@
   display: flex;
   border-radius: 10px;
   width: 85%;
-  /* background-color: white; */
 }
 
 .formControl {
@@ -49,7 +48,6 @@
 .searchSuggestionsContainer {
   position: absolute;
   width: 70%;
-  /* height: 70%; */
   display: flex;
   justify-content: end;
 }

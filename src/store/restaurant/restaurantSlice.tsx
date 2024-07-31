@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Restaurant } from './apiTypes';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Restaurant } from "./apiTypes";
 
 interface RestaurantState {
   restaurants: Restaurant[];
@@ -10,13 +10,13 @@ interface RestaurantState {
 
 const loadState = () => {
   try {
-    const serializedState = localStorage.getItem('restaurantState');
+    const serializedState = localStorage.getItem("restaurantState");
     if (serializedState === null) {
       return undefined;
     }
     return JSON.parse(serializedState);
   } catch (err) {
-    console.error('Could not load state', err);
+    console.error("Could not load state", err);
     return undefined;
   }
 };
@@ -24,9 +24,9 @@ const loadState = () => {
 const saveState = (state: RestaurantState) => {
   try {
     const serializedState = JSON.stringify(state);
-    localStorage.setItem('restaurantState', serializedState);
+    localStorage.setItem("restaurantState", serializedState);
   } catch (err) {
-    console.error('Could not save state', err);
+    console.error("Could not save state", err);
   }
 };
 
@@ -38,7 +38,7 @@ const initialState: RestaurantState = loadState() || {
 };
 
 const restaurantSlice = createSlice({
-  name: 'restaurants',
+  name: "restaurants",
   initialState,
   reducers: {
     fetchRestaurantsRequest: (state, action: PayloadAction<string>) => {
@@ -71,7 +71,10 @@ const restaurantSlice = createSlice({
     fetchAllRestaurantsRequest: (state) => {
       state.loading = true;
     },
-    fetchAllRestaurantsSuccess: (state, action: PayloadAction<Restaurant[]>) => {
+    fetchAllRestaurantsSuccess: (
+      state,
+      action: PayloadAction<Restaurant[]>
+    ) => {
       state.restaurants = action.payload;
       state.loading = false;
       state.error = null;
@@ -81,7 +84,7 @@ const restaurantSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
       saveState(state);
-    }
+    },
   },
 });
 

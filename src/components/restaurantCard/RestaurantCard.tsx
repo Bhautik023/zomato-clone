@@ -22,23 +22,23 @@ const RestaurantCard: React.FC<RestaurantItemProps> = ({
   const navigate = useNavigate();
 
   const handleClick = (id: number) => {
-    navigate(`/restaurant/${id-1}`);
+    navigate(`/restaurant/${id - 1}`);
     console.log(id);
   };
 
   return (
     <div
       key={id}
-      className='restaurantItem fadeIn'
+      className="restaurantItem fadeIn"
       onClick={() => handleClick(id)}
     >
-      <div className='imageContainer'>
-        <img className='image' src={image} alt={foodType} />
+      <div className="imageContainer">
+        <img className="image" src={image} alt={foodType} />
       </div>
       <div className="description p-2 px-3 description-container w-100 d-flex justify-content-between">
         <div className="text-left">
-          <p className='restaurant-title'>{restaurantName}</p>
-          <p className='restaurant-foodType'>{foodType}</p>
+          <p className="restaurant-title">{restaurantName}</p>
+          <p className="restaurant-foodType">{foodType}</p>
         </div>
         <div className="rating d-flex align-items-center">
           <div className="bg-success badge d-flex align-items-center">
