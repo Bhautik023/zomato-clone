@@ -9,26 +9,7 @@ import {
   fetchAllRestaurantsFailure,
 } from "./restaurantSlice";
 import { Restaurant } from "./apiTypes";
-
-const fetchRestaurantsApi = async (
-  query: string
-): Promise<AxiosResponse<Restaurant[]>> => {
-  const response = await axios.post(
-    `http://192.168.1.32:5500/search`,
-    { search: query },
-    {
-      headers: { "Content-Type": "application/json" },
-    }
-  );
-  return response;
-};
-
-const fetchAllRestaurantsAPI = async (): Promise<
-  AxiosResponse<Restaurant[]>
-> => {
-  const response = await axios.get("http://192.168.1.32:5500/restaurant");
-  return response;
-};
+import { fetchAllRestaurantsAPI, fetchRestaurantsApi } from "../../apis/searchApi";
 
 function* fetchRestaurantsSaga(
   action: ReturnType<typeof fetchRestaurantsRequest>
