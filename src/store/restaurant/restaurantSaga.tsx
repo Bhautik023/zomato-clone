@@ -9,7 +9,10 @@ import {
   fetchAllRestaurantsFailure,
 } from "./restaurantSlice";
 import { Restaurant } from "./apiTypes";
-import { fetchAllRestaurantsAPI, fetchRestaurantsApi } from "../../apis/searchApi";
+import {
+  fetchAllRestaurantsAPI,
+  fetchRestaurantsApi,
+} from "../../apis/searchApi";
 
 function* fetchRestaurantsSaga(
   action: ReturnType<typeof fetchRestaurantsRequest>
@@ -20,7 +23,6 @@ function* fetchRestaurantsSaga(
       action.payload
     )) as AxiosResponse<Restaurant[]>;
     const restaurants: Restaurant[] = response.data;
-    console.log(restaurants);
     yield put(fetchRestaurantsSuccess(restaurants));
   } catch (error: any) {
     if (axios.isAxiosError(error)) {

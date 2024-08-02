@@ -16,7 +16,8 @@ export const fetchRestaurantsApi = async (
 };
 
 export const fetchAllRestaurantsAPI = async (): Promise<
-  AxiosResponse<Restaurant[]>> => {
+  AxiosResponse<Restaurant[]>
+> => {
   const response = await axios.get(`${baseUrl}${allDataEndPoint}`);
   return response;
 };

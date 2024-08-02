@@ -23,13 +23,12 @@ const RestaurantCard: React.FC<RestaurantItemProps> = ({
 
   const handleClick = (id: number) => {
     navigate(`/restaurant/${id - 1}`);
-    console.log(id);
   };
 
   return (
     <div
       key={id}
-      className="restaurantItem fadeIn"
+      className="restaurant-item fadeIn p-2"
       onClick={() => handleClick(id)}
     >
       <div className="imageContainer">

@@ -1,9 +1,14 @@
-.primaryContainer{
+.primaryContainer {
   background-color: #fff;
 }
 
-.filter-container{
+.filter-primary-container {
+  position: -webkit-sticky;
   position: sticky;
+}
+
+.filter-container > button {
+  gap: 5px;
 }
 
 .seconderyContainer {
@@ -14,9 +19,10 @@
   align-items: center;
 }
 
-.restaurantItem:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.active {
+  background-color: #ef4f5f !important;
+  color: #fff !important;
+  border: none;
 }
 
 .imageContainer {
@@ -30,10 +36,6 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s;
-}
-
-.restaurantItem:hover .image {
-  transform: scale(1.1);
 }
 
 .textContainer {

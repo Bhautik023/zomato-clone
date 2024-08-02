@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./SearchInput.module.css";
 import SuggestionList from "../suggestionList/SuggestionList";
 import { useOutsideClick } from "../useOutsideClick/useOutsideClick";
-import { fetchRestaurantsRequest } from '../../store/restaurant/restaurantSlice';
+import { fetchRestaurantsRequest } from "../../store/restaurant/restaurantSlice";
 import { RootState } from "../../store/store";
 import { fetchLocationRequest } from "../../store/location/locationSlice";
 
 const SearchInput = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searching, setSearching] = useState(false);
-  const location = useSelector((state :RootState) => state.location.city)
+  const location = useSelector((state: RootState) => state.location.city);
   const dispatch = useDispatch();
 
   // Custom Hook for detect outside click
@@ -19,9 +19,8 @@ const SearchInput = () => {
   });
 
   const fetchLocationHandler = () => {
-    dispatch(fetchLocationRequest())
-    console.log(location)
-  }
+    dispatch(fetchLocationRequest());
+  };
 
   const searchQueryHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
@@ -78,9 +77,7 @@ const SearchInput = () => {
           />
         </div>
         <div className={styles.searchSuggestionsContainer}>
-          {searching && (
-            <SuggestionList/>
-          )}
+          {searching && <SuggestionList />}
         </div>
       </div>
     </div>

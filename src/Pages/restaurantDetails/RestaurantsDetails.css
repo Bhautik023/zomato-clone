@@ -1,12 +1,33 @@
-/* Responsive Design */
-@media (max-width: 768px) {
-  .container {
-    padding: 15px;
-  }
+.px {
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
-@media (max-width: 480px) {
-  .container {
-    padding: 10px;
-  }
+.left-container {
+  border-right: 3px solid rgb(239, 79, 95);
+  background: linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 237, 239));
+}
+
+.menu-item {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 10px 0;
+  padding: 15px;
+  width: 400px;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 0.5s ease;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.quantity-controls .quantity {
+  margin: 0 10px;
+  font-size: 1.2em;
 }

@@ -1,4 +1,3 @@
-import { eventNames } from "process";
 import React, { useEffect, useRef } from "react";
 
 export const useOutsideClick = (callback: () => void) => {
