@@ -1,49 +1,50 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
-import { useNavigate } from 'react-router-dom';
-import styles from './SuggestionList.module.css';
+import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
+import { useNavigate } from "react-router-dom";
+import loader from "../../assets/images/loader.gif";
+import "./SuggestionList.css";
+import { itemType } from "./itemType";
+
 
 const SuggestionList = () => {
   const navigate = useNavigate();
-  const { filteredRestaurants, loading, error } = useSelector(
+  const { restaurants, loading, error } = useSelector(
     (state: RootState) => state.restaurants
   );
-  
-
 
   const handleItemClick = () => {
     navigate(`/restaurants`);
-    
   };
-  if (loading) {
-    return <p>Loading...</p>;
-  }
 
   if (error) {
     return <p>Error: {error}</p>;
   }
 
   return (
-    <div className={`${styles.container} mt-2`}>
-      {filteredRestaurants.length > 0 ? (
-        filteredRestaurants.map((item: any, index: number) => (
-          <div className={styles.suggestionItem} key={index} onClick={() => handleItemClick()}>
-            <div className={styles.imageContainer}>
-              <img
-                className={styles.image}
-                src={item.image}
-                alt={item.foodType}
-              />
+    <div className={`container p-1 mt-2`}>
+      {loading ? (
+        <div className="loader-container d-flex justify-content-center align-items-center">
+          <img className="loading" height="50%" src={loader} alt="Loading" />
+        </div>
+      ) : restaurants.length > 0 ? (
+        restaurants.map((item: itemType, index: number) => (
+          <div
+            className="suggestionItem"
+            key={index}
+            onClick={() => handleItemClick()}
+          >
+            <div className="image-container">
+              <img className="image" src={item.image} alt={item.foodType} />
             </div>
-            <div className={styles.textContainer}>
-              <p className={styles.title}>{item.restaurantName}</p>
-              <p className={styles.description}>{item.foodType}</p>
+            <div className="textContainer">
+              <p className="title">{item.restaurantName}</p>
+              <p className="description">{item.foodType}</p>
             </div>
           </div>
         ))
       ) : (
-        <p>No results found</p>
+        <p className="text-danger">No results found</p>
       )}
     </div>
   );

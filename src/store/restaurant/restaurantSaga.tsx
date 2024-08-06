@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, put, debounce, takeLatest } from "redux-saga/effects";
 import axios, { AxiosResponse } from "axios";
 import {
   fetchRestaurantsRequest,
@@ -9,26 +9,10 @@ import {
   fetchAllRestaurantsFailure,
 } from "./restaurantSlice";
 import { Restaurant } from "./apiTypes";
-
-const fetchRestaurantsApi = async (
-  query: string
-): Promise<AxiosResponse<Restaurant[]>> => {
-  const response = await axios.post(
-    `http://192.168.1.32:5500/search`,
-    { search: query },
-    {
-      headers: { "Content-Type": "application/json" },
-    }
-  );
-  return response;
-};
-
-const fetchAllRestaurantsAPI = async (): Promise<
-  AxiosResponse<Restaurant[]>
-> => {
-  const response = await axios.get("http://192.168.1.32:5500/restaurant");
-  return response;
-};
+import {
+  fetchAllRestaurantsAPI,
+  fetchRestaurantsApi,
+} from "../../apis/searchApi";
 
 function* fetchRestaurantsSaga(
   action: ReturnType<typeof fetchRestaurantsRequest>
@@ -39,7 +23,6 @@ function* fetchRestaurantsSaga(
       action.payload
     )) as AxiosResponse<Restaurant[]>;
     const restaurants: Restaurant[] = response.data;
-    console.log(restaurants);
     yield put(fetchRestaurantsSuccess(restaurants));
   } catch (error: any) {
     if (axios.isAxiosError(error)) {
@@ -75,7 +58,7 @@ function* fetchAllRestaurantsSaga(): Generator {
 }
 
 function* restaurantSaga() {
-  yield takeLatest(fetchRestaurantsRequest.type, fetchRestaurantsSaga);
+  yield debounce(2000, fetchRestaurantsRequest.type, fetchRestaurantsSaga);
   yield takeLatest(fetchAllRestaurantsRequest.type, fetchAllRestaurantsSaga);
 }
 
