@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, put, debounce, takeLatest } from "redux-saga/effects";
 import axios, { AxiosResponse } from "axios";
 import {
   fetchRestaurantsRequest,
@@ -58,7 +58,7 @@ function* fetchAllRestaurantsSaga(): Generator {
 }
 
 function* restaurantSaga() {
-  yield takeLatest(fetchRestaurantsRequest.type, fetchRestaurantsSaga);
+  yield debounce(2000, fetchRestaurantsRequest.type, fetchRestaurantsSaga);
   yield takeLatest(fetchAllRestaurantsRequest.type, fetchAllRestaurantsSaga);
 }
 

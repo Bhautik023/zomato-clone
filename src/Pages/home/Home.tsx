@@ -1,29 +1,26 @@
 import React from "react";
-import homeBackground from "../../assets/homeBackground.avif";
-import title from "../../assets/Title.avif";
+import homeBackground from "../../assets/images/homeBackground.avif";
+import title from "../../assets/images/titleWhite.avif";
 import SearchInput from "../../components/searchInput/SearchInput";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
-import styles from "./Home.module.css";
+import "./Home.css";
 
 const Home = () => {
   const fetchedLocation = useSelector(
     (state: RootState) => state.location.city
   );
+  console.log(fetchedLocation)
 
   return (
-    <div className={styles.homeContainer}>
-      <img
-        src={homeBackground}
-        alt="background"
-        className={styles.background}
-      />
-      <div className={styles.contentOverlay}>
+    <div className="homeContainer">
+      <img src={homeBackground} alt="background" className="background" />
+      <div className="contentOverlay">
         <header>
-          <div className="logo-cotainer">
-            <img src={title} alt="title" className={styles.title} />
+          <div className="logo-cotainer p-3">
+            <img src={title} alt="title" className="title" />
           </div>
-          <div className="tagline-container">
+          <div className="tagline-container pb-3">
             <h3>Discover the best food & drinks in {fetchedLocation}</h3>
           </div>
         </header>

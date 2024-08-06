@@ -2,18 +2,14 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { useNavigate } from "react-router-dom";
-import loader from "../../assets/loader.gif";
+import loader from "../../assets/images/loader.gif";
 import "./SuggestionList.css";
+import { itemType } from "./itemType";
 
-interface itemType {
-  image: string;
-  foodType: string;
-  restaurantName: string;
-}
 
 const SuggestionList = () => {
   const navigate = useNavigate();
-  const { filteredRestaurants, loading, error } = useSelector(
+  const { restaurants, loading, error } = useSelector(
     (state: RootState) => state.restaurants
   );
 
@@ -31,8 +27,8 @@ const SuggestionList = () => {
         <div className="loader-container d-flex justify-content-center align-items-center">
           <img className="loading" height="50%" src={loader} alt="Loading" />
         </div>
-      ) : filteredRestaurants.length > 0 ? (
-        filteredRestaurants.map((item: itemType, index: number) => (
+      ) : restaurants.length > 0 ? (
+        restaurants.map((item: itemType, index: number) => (
           <div
             className="suggestionItem"
             key={index}

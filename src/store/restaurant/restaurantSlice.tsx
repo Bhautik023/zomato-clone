@@ -17,6 +17,7 @@ const loadState = () => {
     return JSON.parse(serializedState);
   } catch (err) {
     console.error("Could not load state", err);
+    console.error("Could not load state", err);
     return undefined;
   }
 };
@@ -56,18 +57,6 @@ const restaurantSlice = createSlice({
       state.error = action.payload;
       saveState(state);
     },
-    filterRestaurants: (state, action: PayloadAction<string>) => {
-      const query = action.payload.toLowerCase();
-      state.filteredRestaurants = state.restaurants.filter((restaurant) =>
-        restaurant.restaurantName.toLowerCase().includes(query)
-      );
-      saveState(state);
-    },
-    setRestaurants: (state, action: PayloadAction<Restaurant[]>) => {
-      state.restaurants = action.payload;
-      state.filteredRestaurants = action.payload;
-      saveState(state);
-    },
     fetchAllRestaurantsRequest: (state) => {
       state.loading = true;
     },
@@ -85,6 +74,12 @@ const restaurantSlice = createSlice({
       state.error = action.payload;
       saveState(state);
     },
+    // given task edit reducer
+    editRestaurantData: (state, action: PayloadAction<any>) => {
+      const id = +action.payload.id;
+      state.restaurants[id - 1].restaurantName = action.payload.text;
+      saveState(state);
+    },
   },
 });
 
@@ -95,8 +90,7 @@ export const {
   fetchAllRestaurantsRequest,
   fetchAllRestaurantsSuccess,
   fetchAllRestaurantsFailure,
-  filterRestaurants,
-  setRestaurants,
+  editRestaurantData,
 } = restaurantSlice.actions;
 
 export default restaurantSlice.reducer;

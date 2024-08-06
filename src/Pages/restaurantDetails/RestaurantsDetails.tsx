@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { RootState } from "../../store/store";
 import Header from "../../components/header/Header";
+import Button from "../../components/button/Button";
 import "./RestaurantsDetails.css";
 
 const RestaurantDetails = () => {
@@ -23,34 +24,34 @@ const RestaurantDetails = () => {
       <div className="details-container px">
         <div className="mb-3">
           <div className="row">
-            <div className="col-md-8">
+            <div className="col-md-8 h-50px p-0">
               <img
-                className={`image-fluid`}
+                className="image-fluid"
                 src={restaurant.image}
                 alt={restaurant.foodType}
                 width="100%"
                 height="100%"
               />
             </div>
-            <div className="col-md-2">
+            <div className="col-md-2 px-1">
               <img
-                className={`image-fluid`}
+                className="image-fluid mb-1"
                 src={restaurant.image3}
                 alt={restaurant.foodType}
                 width="100%"
-                height="49%"
+                height="49.5%"
               />
               <img
-                className={`image-fluid mt-2`}
+                className="image-fluid"
                 src={restaurant.image4}
                 alt={restaurant.foodType}
                 width="100%"
-                height="49%"
+                height="49.5%"
               />
             </div>
-            <div className="col-md-2">
+            <div className="col-md-2 p-0">
               <img
-                className={`image-fluid`}
+                className="image-fluid"
                 src={restaurant.image2}
                 alt={restaurant.foodType}
                 width="100%"
@@ -71,14 +72,14 @@ const RestaurantDetails = () => {
               </div>
               <div>
                 <Link
-                  className={`btn btn-outline-secondary text-decoration-none`}
+                  className="btn btn-outline-secondary text-decoration-none"
                   to={`https://www.google.com/maps/dir/?api=1&destination=${restaurant.location}`}
                   target="_blank"
                   aria-disabled="true"
                 >
                   <span className="d-flex align-items-center">
                     <i
-                      className={`fa-solid fa-diamond-turn-right whiteIcon fs-12 me-1`}
+                      className="fa-solid fa-diamond-turn-right whiteIcon fs-12 me-1"
                     ></i>
                     <p className="mb-0">Direction</p>
                   </span>
@@ -105,7 +106,7 @@ const RestaurantDetails = () => {
           <div className="items ps-5 mt-0">
             {restaurant.items.map((item: any) => (
               <div
-                key={item.name}
+                key={item.id}
                 className="menu-item d-flex justify-content-between"
               >
                 <div>
@@ -113,9 +114,9 @@ const RestaurantDetails = () => {
                   <p>Price: ₹{item.price}</p>
                 </div>
                 <div className="quantity-controls">
-                  <button className="btn btn-secondary">-</button>
+                  <Button className="btn btn-secondary">-</Button>
                   <span className="quantity">0</span>
-                  <button className="btn btn-secondary">+</button>
+                  <Button className="btn btn-secondary">+</Button>
                 </div>
               </div>
             ))}

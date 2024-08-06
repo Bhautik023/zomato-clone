@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-interface LocationState {
+interface LocationStateType {
   city: string;
   error: string | null;
 }
 
-const initialState: LocationState = {
-  city: "Fetch location",
+const initialState: LocationStateType = {
+  city: "Your City",
   error: null,
 };
 

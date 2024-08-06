@@ -6,12 +6,12 @@ import {
   fetchLocationFailure,
 } from "./locationSlice";
 import { LocationResponse } from "./apiTypes";
+import fetchLocation from "../../apis/fetchLocation";
 
 function* fetchLocationSaga() {
   try {
     const response: { data: LocationResponse; status: number } = yield call(
-      axios.get,
-      "http://ip-api.com/json"
+      fetchLocation
     );
     if (response.status === 200) {
       yield put(fetchLocationSuccess(response.data.city));

@@ -1,18 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./RestaurantCard.css";
+import { RestaurantItemPropsType } from "./RestaurantItemPropsType";
 
-interface RestaurantItemProps {
-  restaurantName: string;
-  key: number;
-  id: number;
-  rating: number;
-  image: string;
-  foodType: string;
-  items: { id: Number; name: string; price: Number }[];
-}
-
-const RestaurantCard: React.FC<RestaurantItemProps> = ({
+const RestaurantCard: React.FC<RestaurantItemPropsType> = ({
   id,
   image,
   restaurantName,
@@ -41,7 +32,7 @@ const RestaurantCard: React.FC<RestaurantItemProps> = ({
         </div>
         <div className="rating d-flex align-items-center">
           <div className="bg-success badge d-flex align-items-center">
-            <h6 className="mt-1 mb-0">{rating}</h6>
+            <h6 className=" mb-0">{rating}</h6>
             <i className="fa-solid fa-star ms-1"></i>
           </div>
         </div>

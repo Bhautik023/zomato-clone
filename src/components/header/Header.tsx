@@ -1,8 +1,9 @@
 import React from "react";
-import logo from "../../assets/ZomatoLogo(Black).avif";
+import logo from "../../assets/images/titleBlack.avif";
 import SearchInput from "../searchInput/SearchInput";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
+import Button from "../button/Button";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -21,10 +22,14 @@ const Header = () => {
           </div>
           <ul className="lists">
             <li>
-              <button className="buttonLogin btn btn-primary">Log in</button>
+              <Button className="buttonLogin btn btn-outline-secondary text-decoration-none">
+                Log in
+              </Button>
             </li>
             <li>
-              <button className="buttonSignup btn btn-primary">Sign up</button>
+              <Button className="buttonSignup btn btn-outline-secondary text-decoration-none">
+                Sign up
+              </Button>
             </li>
           </ul>
         </nav>

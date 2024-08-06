@@ -31,7 +31,5 @@
 
 .buttonLogin,
 .buttonSignup {
-  background-color: white;
-  border: none;
-  color: #838383;
+  width: max-content;
 }

@@ -8,6 +8,10 @@
   background: linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 237, 239));
 }
 
+.h-50px {
+  height: 350px;
+}
+
 .menu-item {
   background: white;
   border-radius: 10px;

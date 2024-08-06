@@ -3,9 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import Header from "../../components/header/Header";
 import RestaurantItem from "../../components/restaurantCard/RestaurantCard";
-import { fetchAllRestaurantsRequest } from "../../store/restaurant/restaurantSlice";
+import {
+  editRestaurantData,
+  fetchAllRestaurantsRequest,
+} from "../../store/restaurant/restaurantSlice";
 import { Restaurant } from "../../store/restaurant/apiTypes";
 import "./RestaurantList.css";
+import Button from "../../components/button/Button";
+import InputField from "../../components/inputField/InputField";
+import { SelectedIcon } from "../../assets/svgs/svgs";
 
 const RestaurantList = () => {
   const dispatch = useDispatch();
@@ -26,6 +32,29 @@ const RestaurantList = () => {
     setFilter(type);
   };
 
+  // given task functions
+
+  const [editText, setEditText] = useState({ id: "1", text: "" });
+  const [enteredText, setEnteredText] = useState("");
+
+  const getIdHandler = (e: any) => {
+    setEditText((prev) => {
+      prev.id = e.target.value;
+      prev.text = enteredText;
+      return prev;
+    });
+  };
+
+  const editTextHandler = (e: any) => {
+    setEnteredText(e.target.value);
+  };
+
+  const editHandler = () => {
+    dispatch(editRestaurantData(editText));
+  };
+
+  // end of given task function
+
   const getFilteredRestaurants = () => {
     if (filter === "Veg") {
       return allRestaurants.filter((item) => item.foodType === "Veg");
@@ -42,10 +71,10 @@ const RestaurantList = () => {
       <div>
         <Header />
       </div>
-      <div className={`primaryContainer p-3`}>
+      <div className="primaryContainer p-3">
         <div className="filter-primary-container">
           <div className="filter-container ms-5 d-flex gap-2">
-            <button
+            <Button
               onClick={() => {
                 filterHandler("Veg");
                 setVegActive((prev) => !prev);
@@ -55,20 +84,9 @@ const RestaurantList = () => {
               }  btn btn-light bg-white border d-flex align-items-center`}
             >
               <p className="mb-0">Veg</p>
-              {vegActive && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-x mt-1"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-                </svg>
-              )}
-            </button>
-            <button
+              {vegActive && <SelectedIcon />}
+            </Button>
+            <Button
               onClick={() => {
                 filterHandler("Non-Veg");
                 setNonVegActive((prev) => !prev);
@@ -78,20 +96,9 @@ const RestaurantList = () => {
               } btn btn-light bg-white border d-flex align-items-center`}
             >
               <p className="mb-0">Non-Veg</p>
-              {nonVegActive && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-x mt-1"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-                </svg>
-              )}
-            </button>
-            <button
+              {nonVegActive && <SelectedIcon />}
+            </Button>
+            <Button
               onClick={() => {
                 filterHandler("All");
                 setAllActive((prev) => !prev);
@@ -101,19 +108,8 @@ const RestaurantList = () => {
               } btn btn-light bg-white border d-flex align-items-center`}
             >
               <p className="mb-0">All</p>
-              {allActive && (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-x mt-1"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
-                </svg>
-              )}
-            </button>
+              {allActive && <SelectedIcon />}
+            </Button>
           </div>
         </div>
 
@@ -122,6 +118,39 @@ const RestaurantList = () => {
             Food Delivery Restaurants in {location}
           </p>
         </div>
+        <hr />
+        {/* given task HTML statements */}
+
+        <div className="task-container d-flex">
+          <InputField
+            className="input mx-2"
+            type="text"
+            onChange={editTextHandler}
+            placeholder="enter to edit"
+          />
+          <select
+            className="px-2"
+            name="select restaurant Id"
+            onChange={getIdHandler}
+            id="ids"
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          <Button className="btn btn-secondary mx-2" onClick={editHandler}>
+            Edit
+          </Button>
+        </div>
+
+        {/* End of given task HTML statements */}
         <hr />
         <div className={`seconderyContainer px-3 py-3`}>
           {filteredRestaurants.map((restaurant: Restaurant, index: number) => (
