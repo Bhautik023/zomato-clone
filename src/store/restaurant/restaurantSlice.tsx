@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Restaurant } from './apiTypes';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Restaurant } from "./apiTypes";
 
 interface RestaurantState {
   restaurants: Restaurant[];
@@ -10,13 +10,14 @@ interface RestaurantState {
 
 const loadState = () => {
   try {
-    const serializedState = localStorage.getItem('restaurantState');
+    const serializedState = localStorage.getItem("restaurantState");
     if (serializedState === null) {
       return undefined;
     }
     return JSON.parse(serializedState);
   } catch (err) {
-    console.error('Could not load state', err);
+    console.error("Could not load state", err);
+    console.error("Could not load state", err);
     return undefined;
   }
 };
@@ -24,9 +25,9 @@ const loadState = () => {
 const saveState = (state: RestaurantState) => {
   try {
     const serializedState = JSON.stringify(state);
-    localStorage.setItem('restaurantState', serializedState);
+    localStorage.setItem("restaurantState", serializedState);
   } catch (err) {
-    console.error('Could not save state', err);
+    console.error("Could not save state", err);
   }
 };
 
@@ -38,7 +39,7 @@ const initialState: RestaurantState = loadState() || {
 };
 
 const restaurantSlice = createSlice({
-  name: 'restaurants',
+  name: "restaurants",
   initialState,
   reducers: {
     fetchRestaurantsRequest: (state, action: PayloadAction<string>) => {
@@ -56,22 +57,13 @@ const restaurantSlice = createSlice({
       state.error = action.payload;
       saveState(state);
     },
-    filterRestaurants: (state, action: PayloadAction<string>) => {
-      const query = action.payload.toLowerCase();
-      state.filteredRestaurants = state.restaurants.filter((restaurant) =>
-        restaurant.restaurantName.toLowerCase().includes(query)
-      );
-      saveState(state);
-    },
-    setRestaurants: (state, action: PayloadAction<Restaurant[]>) => {
-      state.restaurants = action.payload;
-      state.filteredRestaurants = action.payload;
-      saveState(state);
-    },
     fetchAllRestaurantsRequest: (state) => {
       state.loading = true;
     },
-    fetchAllRestaurantsSuccess: (state, action: PayloadAction<Restaurant[]>) => {
+    fetchAllRestaurantsSuccess: (
+      state,
+      action: PayloadAction<Restaurant[]>
+    ) => {
       state.restaurants = action.payload;
       state.loading = false;
       state.error = null;
@@ -81,7 +73,13 @@ const restaurantSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
       saveState(state);
-    }
+    },
+    // given task edit reducer
+    editRestaurantData: (state, action: PayloadAction<any>) => {
+      const id = +action.payload.id;
+      state.restaurants[id - 1].restaurantName = action.payload.text;
+      saveState(state);
+    },
   },
 });
 
@@ -92,8 +90,7 @@ export const {
   fetchAllRestaurantsRequest,
   fetchAllRestaurantsSuccess,
   fetchAllRestaurantsFailure,
-  filterRestaurants,
-  setRestaurants,
+  editRestaurantData,
 } = restaurantSlice.actions;
 
 export default restaurantSlice.reducer;

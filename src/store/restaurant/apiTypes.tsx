@@ -1,5 +1,5 @@
 export interface Restaurant {
-  id: number,
+  id: number;
   restaurantName: string;
   categories: string[];
   foodType: string;
@@ -9,7 +9,7 @@ export interface Restaurant {
   image2: string;
   image3: string;
   image4: string;
-  items: { id: Number, name: string, price: Number }[];
+  items: { id: Number; name: string; price: Number }[];
 }
 
 export interface RestaurantsResponse {
