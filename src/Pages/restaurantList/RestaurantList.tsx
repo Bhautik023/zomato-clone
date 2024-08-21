@@ -13,7 +13,7 @@ import Button from "../../components/button/Button";
 import InputField from "../../components/inputField/InputField";
 import { SelectedIcon } from "../../assets/svgs/svgs";
 
-const RestaurantList = () => {
+const RestaurantList:React.FC = () => {
   const dispatch = useDispatch();
   const [vegActive, setVegActive] = useState(false);
   const [nonVegActive, setNonVegActive] = useState(false);
@@ -43,14 +43,6 @@ const RestaurantList = () => {
       prev.text = enteredText;
       return prev;
     });
-  };
-
-  const editTextHandler = (e: any) => {
-    setEnteredText(e.target.value);
-  };
-
-  const editHandler = () => {
-    dispatch(editRestaurantData(editText));
   };
 
   // end of given task function
@@ -125,7 +117,7 @@ const RestaurantList = () => {
           <InputField
             className="input mx-2"
             type="text"
-            onChange={editTextHandler}
+            onChange={(e) => setEnteredText(e.target.value)}
             placeholder="enter to edit"
           />
           <select
@@ -145,7 +137,7 @@ const RestaurantList = () => {
             <option value="9">9</option>
             <option value="10">10</option>
           </select>
-          <Button className="btn btn-secondary mx-2" onClick={editHandler}>
+          <Button className="btn btn-secondary mx-2" onClick={() => dispatch(editRestaurantData(editText))}>
             Edit
           </Button>
         </div>

@@ -1,12 +1,12 @@
 import axios, { AxiosResponse } from "axios";
 import { Restaurant } from "../store/restaurant/apiTypes";
-import { allDataEndPoint, baseUrl, searchEndPoint } from "./baseUrl";
+import { allDataEndPoint, restaurantBaseUrl, searchEndPoint } from "./baseUrl";
 
 export const fetchRestaurantsApi = async (
   query: string
 ): Promise<AxiosResponse<Restaurant[]>> => {
   const response = await axios.post(
-    `${baseUrl}${searchEndPoint}`,
+    `${restaurantBaseUrl}${searchEndPoint}`,
     { search: query },
     {
       headers: { "Content-Type": "application/json" },
@@ -18,6 +18,6 @@ export const fetchRestaurantsApi = async (
 export const fetchAllRestaurantsAPI = async (): Promise<
   AxiosResponse<Restaurant[]>
 > => {
-  const response = await axios.get(`${baseUrl}${allDataEndPoint}`);
+  const response = await axios.get(`${restaurantBaseUrl}${allDataEndPoint}`);
   return response;
 };

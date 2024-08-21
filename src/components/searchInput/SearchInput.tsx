@@ -9,7 +9,7 @@ import InputField from "../inputField/InputField";
 import { LocationIcon, SearchIcon } from "../../assets/svgs/svgs";
 import "./SearchInput.css";
 
-const SearchInput = () => {
+const SearchInput:React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searching, setSearching] = useState(false);
   const fetchedLocation = useSelector(
@@ -44,11 +44,11 @@ const SearchInput = () => {
             type="text"
             className="formControl form-control .bg-white"
             placeholder={
-              fetchedLocation == "Your City"
+              fetchedLocation === "Your City"
                 ? "Fetch Location"
                 : fetchedLocation
             }
-            value={fetchedLocation == "Your City" ? '' : fetchedLocation}
+            value={fetchedLocation === "Your City" ? '' : fetchedLocation}
             onChange={() => {}}
             onClick={fetchLocationHandler}
           />

@@ -6,10 +6,10 @@ import Header from "../../components/header/Header";
 import Button from "../../components/button/Button";
 import "./RestaurantsDetails.css";
 
-const RestaurantDetails = () => {
-  const { id } = useParams<{ id: any }>();
+const RestaurantDetails:React.FC = () => {
+  const { id } = useParams<{ id: string | undefined }>();
   const restaurant = useSelector(
-    (state: RootState) => state.restaurants.restaurants[id]
+    (state: RootState) => state.restaurants.restaurants[id == undefined ? 0 : +id]
   );
 
   if (!restaurant) {
@@ -64,10 +64,10 @@ const RestaurantDetails = () => {
         <div className="row mb-5">
           <div className="restaurant-description w-100 d-flex align-items-baseline py-2 justify-content-between col-md-6">
             <div className="">
-              <h2>{restaurant.restaurantName}</h2>
+              <h2 className="restaurat-name">{restaurant.restaurantName}</h2>
               <div className="d-flex gap-2">
-                {restaurant.items.map((item) => (
-                  <p>{item.name}</p>
+                {restaurant.categories.map((item) => (
+                  <p>{item}</p>
                 ))}
               </div>
               <div>

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import "./Home.css";
 
-const Home = () => {
+const Home:React.FC = () => {
   const fetchedLocation = useSelector(
     (state: RootState) => state.location.city
   );

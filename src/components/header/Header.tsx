@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "./Header.css";
 import Button from "../button/Button";
 
-const Header = () => {
+const Header:React.FC = () => {
   const navigate = useNavigate();
   return (
     <>

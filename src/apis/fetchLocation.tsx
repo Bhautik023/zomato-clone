@@ -4,7 +4,6 @@ import { locationBaseUrl } from "./baseUrl";
 
 const fetchLocation = () => {
   const response = axios.get(locationBaseUrl);
-
   return response;
 };
 

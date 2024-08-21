@@ -7,7 +7,7 @@ import "./SuggestionList.css";
 import { itemType } from "./itemType";
 
 
-const SuggestionList = () => {
+const SuggestionList:React.FC = () => {
   const navigate = useNavigate();
   const { restaurants, loading, error } = useSelector(
     (state: RootState) => state.restaurants
